@@ -1,0 +1,34 @@
+﻿
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <form method="post">
+                <fieldset>
+                    <legend>Yaratmaq</legend>
+                    <div class="mb-3">
+                        <label for="authorId" class="form-label">
+                            Author
+                        </label>
+                        <input id="authorId" name="Author" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="genreId" class="form-label">
+                            Genre
+                        </label>
+                        <input id="genreId" name="Genre" class="form-control" />
+                    </div>
+                    <div class="mb-3">
+                        <label for="priceId" class="form-label">
+                            Price
+                        </label>
+                        <input id="priceId" name="Price" class="form-control" />
+                    </div>
+                    @Html.AntiForgeryToken()
+                    <button type="submit" class="btn btn-primary">
+                        Gonder
+                    </button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

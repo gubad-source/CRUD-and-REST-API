@@ -1,0 +1,65 @@
+﻿
+@model List<Bookk>
+@{
+    ViewData["Title"] = "Index";
+}
+@section style{
+    <script src="https://kit.fontawesome.com/1154e1d6ee.js" crossorigin="anonymous"></script>
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8 offset-2">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Price</th>
+                        <th>Author</th>
+                        <th>Genre</th>
+                        <th>Count</th>
+                        <th>
+                            <a href="/home/create" class="btn btn-sm btn-success">
+                                <i class="fas fa-plus"></i>
+                                Yenisini yarat
+                            </a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td colspan="5" style="text-align:center">
+                            Melumat sayi @Model.Count()
+                        </td>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.Price</td>
+                            <td>@item.Author</td>
+                            <td>@item.Genre</td>
+                            <td>@item.Count</td>
+                            <td>
+                                <a href="/home/details/@item.Id" class="btn btn-sm btn-primary">
+                                    <i class="fas fa-eye"></i>
+                                    Etrafli
+                                </a>
+                                <a href="/home/edit/@item.Id" class="btn btn-sm btn-warning">
+                                    <i class="fas fa-pencil-alt"></i>
+                                    Redakte
+                                </a>
+                                <a href="/home/delete/@item.Id" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash-alt"></i>
+                                    Sil
+                                </a>
+
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
